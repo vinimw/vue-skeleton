@@ -1,0 +1,9 @@
+@import "../base/_mixins";
+@import "../base/_variables";
+@import "../base/_functions";
+
+.input-button {
+  width: 100%;
+  display: inline-block;
+  margin: 10px 0;
+}

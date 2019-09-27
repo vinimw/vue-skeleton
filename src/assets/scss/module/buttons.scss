@@ -1,0 +1,19 @@
+@import "../base/_mixins";
+@import "../base/_variables";
+@import "../base/_functions";
+
+.button {
+  display: inline-block;
+  font-size: 14px;
+  padding: 5px 10px;
+  background-color: $primary-color;
+  color: $white;
+  @include fade(.4s);
+  text-align: center;
+  min-width: 80px;
+
+  &:hover {
+    background: $secondary-color;
+    @include fade(.4s);
+  }
+}

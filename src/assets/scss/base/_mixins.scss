@@ -1,0 +1,77 @@
+/**
+ * Mixins
+ */
+
+@mixin boxSizing($box){
+    -moz-box-sizing: $box;
+    -webkit-box-sizing: $box;
+    box-sizing: $box;
+}
+
+@mixin any($property, $expression) {
+    -webkit-#{$property}: #{$expression};
+    -moz-#{$property}: #{$expression};
+    -ms-#{$property}: #{$expression};
+    -o-#{$property}: #{$expression};
+    #{$property}: #{$expression};
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+    @content;
+}
+
+@mixin fade {
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+    // Direction has been omitted and happens to be a color-stop
+    @if is-direction($direction) == false {
+        $color-stops: $direction, $color-stops;
+        $direction: 180deg;
+    }
+
+    background: nth(nth($color-stops, 1), 1) !important;
+    background: -webkit-linear-gradient(legacy-direction($direction), $color-stops) !important;
+    background: linear-gradient($direction, $color-stops) !important;
+}
+
+@mixin placeholder($property , $expression) {
+    &::-webkit-input-placeholder {
+        #{$property}: #{$expression};
+    }
+
+    &:-moz-placeholder {
+        #{$property}: #{$expression};
+    }
+
+    &::-moz-placeholder {
+        #{$property}: #{$expression};
+    }
+
+    &:-ms-input-placeholder {
+        #{$property}: #{$expression};
+    }
+}
+
+@mixin fade($str) {
+    -webkit-transition: all $str linear;
+    -moz-transition: all $str linear;
+    -ms-transition: all $str linear;
+    -o-transition: all $str linear;
+    transition: all $str linear;
+}
+
+@mixin borderRadius($round) {
+    -webkit-border-radius: $round;
+    -moz-border-radius: $round;
+    border-radius: $round;
+}

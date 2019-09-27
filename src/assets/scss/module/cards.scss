@@ -1,0 +1,11 @@
+@import "../base/_mixins";
+@import "../base/_variables";
+@import "../base/_functions";
+
+.card-info {
+  border: 1px solid $grey;
+  padding: 20px;
+  display: inline-block;
+  margin: 10px 0;
+  @include borderRadius(10px);
+}

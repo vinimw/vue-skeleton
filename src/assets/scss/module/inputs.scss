@@ -1,0 +1,10 @@
+@import "../base/_mixins";
+@import "../base/_variables";
+@import "../base/_functions";
+
+.input {
+  display: inline-block;
+  font-size: 14px;
+  padding: 5px 10px;
+  color: $primary-color;
+}
